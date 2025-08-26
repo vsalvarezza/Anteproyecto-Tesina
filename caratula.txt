@@ -1,0 +1,31 @@
+\begin{titlepage}
+\begin{center}
+
+\vspace*{1cm}
+\includegraphics[width=0.4\textwidth]{Files/Logo-Unr.png}
+
+\vspace{1.5cm}
+
+{\Large\textbf{Facultad de Ciencias Económicas y Estadística}}\\[0.2cm]
+{\large Universidad Nacional de Rosario}
+
+\vspace{1.5cm}
+
+{\LARGE\textbf{Anteproyecto}}\\[0.7cm]
+{\huge\textbf{[Acá va el título de la tesina]}}
+
+\vspace{2cm}
+
+\begin{flushleft}
+\textbf{Director:} Iván Millanes\\
+\textbf{Codirector:} Diego Marfetán Molina\\
+\textbf{Alumna:} Valentina Salvarezza
+\end{flushleft}
+
+\vfill
+
+\end{center}
+\end{titlepage}
+
+\newpage
+\setcounter{page}{1}

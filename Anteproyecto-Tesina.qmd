@@ -1,0 +1,45 @@
+---
+title: ""
+author: ""
+lang: es
+format:
+  pdf:
+    latex-engine: pdflatex
+    toc: true
+    toc-title: "Índice"
+    number-sections: true
+    fig-cap-location: bottom
+    tbl-cap-location: bottom
+    tbl-cap: true
+    include-before-body: caratula.txt
+    include-in-header:  
+      text: |
+        \usepackage{graphicx}
+        \usepackage{titling}
+        \usepackage{ragged2e}
+        \usepackage{booktabs}
+        \usepackage{longtable}
+        \usepackage{array}
+        \usepackage{multirow}
+        \usepackage[table]{xcolor}
+        \usepackage{caption}
+        \captionsetup[table]{labelfont=bf, labelsep=colon}
+        \renewcommand{\contentsname}{Índice}
+---
+
+\newpage
+
+# **Objetivos**
+
+## **Objetivo General**
+
+El objetivo principal de esta tesina es desarrollar una herramienta para la optimización de rutas en Rosario mediante el uso del algoritmo de Dijkstra. La herramienta se implementará a través de una Shiny App en RStudio, donde los usuarios podrán calcular rutas optimizadas para vehículos, considerando criterios de distancia y tiempo de viaje.
+
+## **Objetivos Específicos:**
+
+-   Analizar los datos de nodos y aristas: Examinar los datos geográficos representados como nodos (intersecciones) y aristas (calles y caminos), que constituyen un tipo de dato no convencional, nunca antes tratado en la carrera, para evaluar su adecuación y optimización en el cálculo de rutas.
+
+-   Desarrollar el algoritmo de Dijkstra, un algoritmo de optimización que calculará rutas ponderando por la distancia y el tiempo de viaje. Esto permitirá generar dos tipos de recorridos: el más corto y el más rápido, dependiendo de la preferencia del usuario.
+
+-   Crear una Shiny App en RStudio para visualizar las rutas optimizadas para vehículos, utilizando un servidor de OSRM desplegado localmente. Este servidor es crucial para realizar el cálculo de las rutas, ya que procesa los datos geográficos de Rosario y genera los recorridos más cortos y rápidos en tiempo real, los cuales se mostrarán a través de una interfaz interactiva.
+
