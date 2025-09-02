@@ -1,0 +1,57 @@
+@article{dijkstra1959note,
+  title={A note on two problems in connexion with graphs},
+  author={Dijkstra, E. W.},
+  journal={Numerische Mathematik},
+  volume={1},
+  number={1},
+  pages={269--271},
+  year={1959},
+  publisher={Springer},
+  doi={10.1007/BF01386390}
+}
+
+@misc{osm2021,
+  author = {OpenStreetMap contributors},
+  title = {OpenStreetMap},
+  year = {2021},
+  howpublished = {\url{https://www.openstreetmap.org}}
+}
+
+@book{raubal2002encyclopedia,
+  author = {Raubal, M. and Winter, S.},
+  title = {Encyclopedia of GIS},
+  publisher = {Springer},
+  year = {2002},
+  pages = {362-366},
+  doi = {10.1007/978-1-4614-6435-8_116}
+}
+
+@misc{osrm2021,
+  author = {OSRM Team},
+  title = {Open Source Routing Machine Documentation},
+  year = {2021},
+  url = {https://project-osrm.org/}
+}
+
+@inproceedings{schulz2012efficient,
+  author = {Schulz, C. and Lüning, M.},
+  title = {Efficient route planning with Open Source Routing Machine (OSRM)},
+  booktitle = {Open Source GIS Conference},
+  year = {2012}
+}
+
+@book{tian2018geospatial,
+  author = {Tian, Z. and Sui, D. Z.},
+  title = {Geospatial analysis and modeling of urban systems},
+  publisher = {Springer},
+  year = {2018},
+  doi = {10.1007/978-3-319-64870-2}
+}
+
+@inproceedings{muller2015multi,
+  author = {Müller, J. and Heller, A.},
+  title = {Multi-Level Dijkstra: Optimizing pathfinding in large networks},
+  booktitle = {Proceedings of the International Conference on Geographic Information Science},
+  year = {2015},
+  doi = {10.1007/978-3-319-20356-0_18}
+}
