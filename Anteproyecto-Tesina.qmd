@@ -42,11 +42,11 @@ nocite: '@*'
 
 En la actualidad, cuando una persona necesita desplazarse de un punto a otro, es común recurrir a aplicaciones como Google Maps (Alphabet Inc., 2023). Estas herramientas han transformado la manera en que se planifican los desplazamientos, proporcionando información precisa sobre las rutas más convenientes, ya sea caminando, en automóvil, en bicicleta o utilizando otros medios de transporte. Además de indicar el recorrido a seguir, muchas de estas aplicaciones estiman el tiempo de llegada y consideran factores como el tráfico o las condiciones meteorológicas para ofrecer mejores alternativas.
 
-Sin embargo, surgen algunas preguntas fundamentales: ¿Cómo funcionan realmente estas aplicaciones? ¿Cómo son capaces de calcular la ruta más corta o más rápida en función de las preferencias del usuario? Responder estas preguntas requiere apoyarse en la teoría de grafos, una rama de las matemáticas y la informática que permite modelar relaciones y estructuras en diversas áreas, como redes de comunicación, análisis de redes sociales y optimización de sistemas logísticos. En el contexto de la planificación de rutas, el problema se modela mediante un grafo, donde los nodos representan intersecciones y las aristas, los caminos que los conectan. A través de este modelo es posible calcular las rutas más eficientes, evaluando cada trayecto en función de costos asociados, como la distancia o el tiempo de viaje, e identificando la opción óptima que minimice dichos costos.
+Sin embargo, surgen algunas preguntas fundamentales: ¿Cómo funcionan realmente estas aplicaciones? ¿Cómo son capaces de calcular la ruta más corta o más rápida en función de las preferencias del usuario? Responder estas preguntas requiere apoyarse en la Teoría de Grafos, una rama de las matemáticas y la informática que permite modelar relaciones y estructuras en diversas áreas, como redes de comunicación, análisis de redes sociales y optimización de sistemas logísticos. En el contexto de la planificación de rutas, el problema se modela mediante un grafo, donde los nodos representan intersecciones y las aristas, los caminos que los conectan. A través de este modelo es posible calcular las rutas más eficientes, evaluando cada trayecto en función de costos asociados, como la distancia o el tiempo de viaje, e identificando la opción óptima que minimice dichos costos.
 
-Para resolver este problema, se emplea el algoritmo de Dijkstra, desarrollado por Edsger W. Dijkstra en 1956 y publicado en 1959 (Dijkstra, 1959). Este algoritmo, ampliamente utilizado en teoría de grafos, permite encontrar el camino más corto entre dos nodos cuando los pesos de las aristas son no negativos. Su eficiencia y robustez lo convierten en una herramienta clave en diversas aplicaciones, como sistemas de navegación, redes informáticas y planificación logística. Uno de los servidores que implementa este algoritmo es OSRM (Open Source Routing Machine) (Luxen & Vetter, 2011), un enrutador de código abierto diseñado para procesar datos provenientes de OpenStreetMap (OSM) (OpenStreetMap, s.f.). OSRM, al integrarse con OSM, calcula rutas optimizadas en función de distintos criterios, como el medio de transporte o restricciones en el camino. Su capacidad para manejar grandes volúmenes de datos y ofrecer respuestas rápidas lo convierte en una solución ampliamente utilizada en aplicaciones de movilidad, logística y optimización de rutas.
+Para resolver este problema, se emplea el algoritmo de Dijkstra, desarrollado por Edsger W. Dijkstra en 1956 y publicado en 1959 (Dijkstra, 1959). Este algoritmo, ampliamente utilizado en teoría de grafos, permite encontrar el camino más corto entre dos nodos cuando los pesos de las aristas son no negativos. Su eficiencia y robustez lo convierten en una herramienta clave en diversas aplicaciones, como sistemas de navegación, redes informáticas y planificación logística. Uno de los servidores que implementa este algoritmo es OSRM (*Open Source Routing Machine*) (Luxen & Vetter, 2011), un enrutador de código abierto diseñado para procesar datos provenientes de OpenStreetMap (OSM) (OpenStreetMap, s.f.). OSRM, al integrarse con OSM, calcula rutas optimizadas en función de distintos criterios, como el medio de transporte o restricciones en el camino. Su capacidad para manejar grandes volúmenes de datos y ofrecer respuestas rápidas lo convierte en una solución ampliamente utilizada en aplicaciones de movilidad, logística y optimización de rutas.
 
-En este trabajo, se desarrolla una aplicación web utilizando Shiny (RStudio, 2023) en RStudio. Shiny es una herramienta interactiva que permite crear aplicaciones web dinámicas y reactivas directamente desde R. Esta aplicación está diseñada para calcular recorridos óptimos entre diferentes puntos de la ciudad de Rosario, permitiendo al usuario seleccionar intersecciones como puntos de origen y destino. A partir de esta selección, se genera el recorrido más corto o el más rápido, según la preferencia del usuario. Comprender cómo se estructuran y procesan estos datos no solo permite analizar en profundidad el funcionamiento de estas herramientas, sino también explorar aplicaciones en movilidad urbana, planificación del transporte público y optimización logística. Para establecer la conexión entre R y el motor de enrutamiento OSRM se utiliza el paquete osrm (Giraud, 2022), que permite integrar directamente los cálculos de rutas dentro de la aplicación Shiny.
+En este trabajo, se desarrolla una aplicación web utilizando la librería Shiny (\textbf{\textcolor{red}{incluir cita a shiny usando la info que sale en citation("shiny")}}) del lenguaje R. Shiny es una herramienta interactiva que permite crear aplicaciones web dinámicas y reactivas directamente desde RStudio. Esta aplicación está diseñada para calcular recorridos óptimos entre diferentes puntos de la ciudad de Rosario, permitiendo al usuario seleccionar intersecciones como puntos de origen y destino. A partir de esta selección, se genera el recorrido más corto o el más rápido, según la preferencia del usuario. Comprender cómo se estructuran y procesan estos datos no solo permite analizar en profundidad el funcionamiento de estas herramientas, sino también explorar aplicaciones en movilidad urbana, planificación del transporte público y optimización logística. Para establecer la conexión entre R y el motor de enrutamiento OSRM se utiliza el paquete osrm (Giraud, 2022), que permite integrar directamente los cálculos de rutas dentro de la aplicación Shiny.
 
 \newpage
 
@@ -56,7 +56,7 @@ En este trabajo, se desarrolla una aplicación web utilizando Shiny (RStudio, 20
 
 El objetivo principal de esta tesina es desarrollar una Shiny App en RStudio para la optimización de rutas en la ciudad de Rosario, aplicando el algoritmo Dijkstra y utilizando el motor de enrutamiento OSRM para el cálculo de recorridos. La aplicación permitirá considerar criterios de distancia y tiempo de viaje, y estará diseñada específicamente para vehículos automóviles.
 
-## **Objetivos Específicos:**
+## **Objetivos Específicos**
 
 -   Analizar los datos cartográficos representados por nodos (intersecciones) y aristas (calles), que constituyen un tipo de dato no convencional, con el fin de evaluar su utilidad en el cálculo y optimización de rutas.
 
@@ -80,13 +80,13 @@ Algunos de los grafos que se utilizan para modelar redes viales son los siguient
 
 -   **Grafo ponderado:** Cada arista $e \ \in \ E$ tiene asociado un peso definido por una función $p:E\to \mathbb{R}^+$. El valor $p(e)$ representa el costo de la arista, que puede reflejar distancia, tiempo de viaje u otra magnitud. La longitud de un camino se calcula como la suma de los pesos de las aristas que lo integran, lo que permite construir recorridos según diferentes criterios.
 
-En síntesis, la elección del tipo de grafo determina cómo se representan las restricciones y características de la red vial. En el presente trabajo, se emplean principalmente grafos dirigidos y ponderados, donde la ponderación se realiza por distancia o por tiempo, según el criterio de optimización considerado.
+En síntesis, la elección del tipo de grafo determina cómo se representan las restricciones y características de la red vial. En el presente trabajo se emplean principalmente grafos dirigidos y ponderados, donde la ponderación se realiza por distancia o por tiempo, según el criterio de optimización considerado.
 
 ## **Algoritmo de Dijkstra**
 
 El algoritmo de Dijkstra, propuesto por Edsger W. Dijkstra en 1956, es un método ampliamente utilizado para determinar el camino de costo mínimo entre un vértice de origen $o$ y un vértice destino $z$ dentro de un grafo ponderado. En estos grafos, cada arista tiene un peso que puede representar distancia, tiempo u otro tipo de costo, y se asume que estos pesos son no negativos. Este algoritmo resulta fundamental en sistemas de navegación y optimización de rutas, ya que permite calcular caminos mínimos de manera rápida y precisa.
 
-La idea central del algoritmo consiste en avanzar desde un nodo de origen hacia los nodos adyacentes, seleccionando las rutas de menor costo en cada paso, hasta llegar al destino. Para ello, se define la función de distancias $D:V\to \mathbb{R}^+$, donde a cada nodo $v \in V$ se le asigna un valor $D(v)$, que representa el costo mínimo conocido desde el nodo de origen $o$ hasta el nodo $v$. No se utiliza la notación $D(o,v)$ porque el vértice de origen $o$ se mantiene fijo a lo largo de toda la ejecución del algoritmo, por lo que basta con indicar $D(v)$. Inicialmente, se establece que $D(o)=0$, mientras que $\forall \ v \neq o$ se fija $D(v)=\infty$, lo que indica que aún no se ha encontrado un camino de costo mínimo desde el origen. Este procedimiento ha sido ampliamente documentado en la literatura clásica de algoritmos (Cormen, Leiserson, Rivest y Stein, 2009) y continúa siendo base para desarrollos más avanzados en planificación de rutas y sistemas de transporte (Bast et al., 2016).
+La idea central del algoritmo consiste en avanzar desde un nodo de origen hacia los nodos adyacentes, seleccionando las rutas de menor costo en cada paso, hasta llegar al destino. Para ello, se define la función de distancias $D:V\to \mathbb{R}^+$, donde a cada nodo $v \in V$ se le asigna un valor $D(v)$, que representa el costo mínimo conocido desde el nodo de origen $o$ hasta el nodo $v$. No se utiliza la notación $D(o,v)$ porque el vértice de origen $o$ se mantiene fijo a lo largo de toda la ejecución del algoritmo, por lo que basta con indicar $D(v)$. Inicialmente, se establece que $D(o)=0$, mientras que $\forall \ v \neq o$ se fija $D(v)=\infty$, lo que indica que aún no se ha encontrado un camino de costo mínimo desde el origen. Este procedimiento ha sido ampliamente documentado en la literatura clásica de algoritmos (Cormen et al., 2009) y continúa siendo base para desarrollos más avanzados en planificación de rutas y sistemas de transporte (Bast et al., 2016).
 
 Estos valores se actualizan a medida que se exploran nuevas rutas y pueden clasificarse en dos tipos:
 
@@ -96,7 +96,7 @@ Estos valores se actualizan a medida que se exploran nuevas rutas y pueden clasi
 
 El procedimiento del algoritmo se desarrolla de la siguiente manera:
 
-1.  **Inicialización:** Se establece el costo mínimo desde el nodo de origen hacia sí mismo $D(o) = 0$, y para todos los demás nodos $D(t) = \infty$, ya que no se conoce el costo hacia ellos. Donde $t$ pertenece al conjunto $T$, el cual se define como el conjunto de todos los nodos no visitados, es decir, aquellos nodos cuya distancia mínima desde el origen aún no ha sido confirmada.
+1.  **Inicialización:** Se establece el costo mínimo desde el nodo de origen hacia sí mismo $D(o) = 0$, y para todos los demás nodos $D(t) = \infty$, ya que no se conoce el costo hacia ellos. \textbf{\textcolor{red}{Donde $t$ pertenece al conjunto $T$ ver si podemos poner esto en la oración anterior, quizas usando notacion matemática}}, el cual se define como el conjunto de todos los nodos no visitados, es decir, aquellos nodos cuya distancia mínima desde el origen aún no ha sido confirmada.
 
 2.  **Selección del nodo con menor costo:** Se selecciona el nodo $u$ del conjunto $T$ con el valor más bajo de $D$, es decir, el nodo cuyo costo desde el origen es el mínimo entre los nodos no visitados.
 
@@ -120,7 +120,7 @@ El enfoque del MLD se basa en una estructura jerárquica de niveles:
 
 -   **Nivel 2 y superiores:** los distritos se combinan en macrozonas que abarcan áreas extensas, por ejemplo, Norte, Sur, Este y Oeste.
 
-Durante la fase de preprocesamiento, el algoritmo identifica los nodos frontera, definidos como aquellos vértices que poseen al menos una arista que conecta con un vértice ubicado en otra celda, y calcula previamente los caminos más cortos entre ellos. Con esta información se construye un grafo reducido (overlay graph) que funciona como un sistema de atajos entre celdas y permite que el cálculo de rutas se limite únicamente a las áreas relevantes.
+Durante la fase de preprocesamiento, el algoritmo identifica los nodos frontera, definidos como aquellos vértices que poseen al menos una arista que conecta con un vértice ubicado en otra celda, y calcula previamente los caminos más cortos entre ellos. Con esta información se construye un grafo reducido (*overlay graph*) que funciona como un sistema de atajos entre celdas y permite que el cálculo de rutas se limite únicamente a las áreas relevantes.
 
 El procedimiento del Multi-Level Dijkstra (MLD) funciona de la siguiente manera:
 
@@ -128,13 +128,13 @@ El procedimiento del Multi-Level Dijkstra (MLD) funciona de la siguiente manera:
 
 -   Cuando el origen y destino están en celdas distintas, se utiliza un grafo reducido de niveles superiores para realizar un “salto” entre regiones. Luego, se desciende a niveles más detallados hasta llegar al nivel más bajo y reconstruir el trayecto completo, calle por calle.
 
-Este enfoque permite mantener la precisión en la ruta óptima, mientras se reduce significativamente la cantidad de nodos a explorar, lo que resulta crucial para aplicaciones de movilidad urbana que manejan grandes volúmenes de datos geográficos, como los provenientes de OpenStreetMap (OSM).
+Este enfoque permite mantener la precisión en la ruta óptima, mientras se reduce significativamente la cantidad de nodos a explorar, lo que resulta crucial para aplicaciones de movilidad urbana que manejan grandes volúmenes de datos geográficos, como los provenientes de OSM.
 
-En resumen, el MLD combina la exhaustividad del algoritmo de Dijkstra con una estructura jerárquica eficiente, optimizando tanto el tiempo de cálculo como la gestión de rutas en redes urbanas extensas.
+En resumen, MLD combina la exhaustividad del algoritmo de Dijkstra con una estructura jerárquica eficiente, optimizando tanto el tiempo de cálculo como la gestión de rutas en redes urbanas extensas.
 
 ## **Implementación y configuración de OSRM para la ciudad de Rosario**
 
-Open Source Routing Machine (OSRM) es una herramienta de enrutamiento de código abierto que utiliza datos geográficos de OpenStreetMap (OSM) (Luxen & Vetter, 2011; OpenStreetMap, s.f.) para calcular rutas óptimas en redes viales. Implementa el algoritmo de Dijkstra y una extensión optimizada llamada Multi-Level Dijkstra, lo que le permite generar rutas rápidas y precisas incluso con grandes volúmenes de datos. OSRM se utiliza principalmente en aplicaciones de navegación y en sistemas donde se requiere cálculo eficiente de rutas.
+*Open Source Routing Machine* (OSRM) es una herramienta de enrutamiento de código abierto que utiliza datos geográficos de OpenStreetMap (OSM) (Luxen & Vetter, 2011; OpenStreetMap, s.f.) para calcular rutas óptimas en redes viales. Implementa el algoritmo de Dijkstra y su extensión optimizada Multi-Level Dijkstra, lo que le permite generar rutas rápidas y precisas incluso con grandes volúmenes de datos. OSRM se utiliza principalmente en aplicaciones de navegación y en sistemas donde se requiere cálculo eficiente de rutas.
 
 ### **Obtención de los datos**
 
@@ -144,9 +144,13 @@ Se descargan los datos correspondientes a toda la ciudad de Rosario, asegurando 
 
 ### **Cálculo de rutas**
 
-Aunque OSRM ofrece un servidor público para el cálculo de rutas, este servicio tiene limitaciones importantes: si se superan ciertos volúmenes de solicitudes (requests), puede saturarse o incluso rechazar peticiones. Debido a esta restricción, y para garantizar un funcionamiento estable durante las pruebas y el desarrollo, se opta por implementar servidores de OSRM locales.
+Aunque OSRM ofrece un servidor público para el cálculo de rutas, este servicio tiene limitaciones importantes: si se superan ciertos volúmenes de solicitudes (*requests*), puede saturarse o incluso rechazar peticiones. Debido a esta restricción, y para garantizar un funcionamiento estable durante las pruebas y el desarrollo, se opta por implementar servidores de OSRM locales.
 
-Dado que un mismo servidor de OSRM no permite calcular ambos criterios de forma simultánea (camino más corto y camino más rápido), se configuran dos servidores locales independientes. Para lograr esto, se modifica el archivo de perfil de enrutamiento `car.lua`, que define cómo se interpretan los datos del mapa y qué criterio se prioriza al generar una ruta. La configuración se realiza de la siguiente manera:
+Dado que un mismo servidor de OSRM no permite calcular ambos criterios de forma simultánea (camino más corto y camino más rápido), se configuran dos servidores locales independientes.
+
+\textbf{\textcolor{red}{esta parte no la pondria en el anteproyecto, solo en la tesina}}
+
+Para lograr esto, se modifica el archivo de perfil de enrutamiento `car.lua`, que define cómo se interpretan los datos del mapa y qué criterio se prioriza al generar una ruta. La configuración se realiza de la siguiente manera:
 
 -   **Servidor para el camino más corto:** Se establece `weight_name = 'distance'` en `car.lua`, lo que indica que debe priorizar recorridos con la menor distancia posible.
 
@@ -156,7 +160,7 @@ Esta estrategia permite generar ambos tipos de rutas de forma precisa y controla
 
 ### **Despliegue en la nube**
 
-Una vez construidos los servidores de OSRM locales, es necesario desplegarlos en la nube. Esto se debe a que, al publicar la aplicación en shinyapps.io, los servidores deben estar accesibles de forma remota. Si permanecen en la red local, la aplicación no puede comunicarse con ellos una vez desplegada.
+Una vez construidos los servidores de OSRM locales, es necesario desplegarlos en la nube. Esto se debe a que, al publicar la aplicación en shinyapps.io \textbf{\textcolor{red}{si nombras shinyapps hay que definirlo, mejor decir directamente publicar en la web, o publicar online, algo asi}}, los servidores deben estar accesibles de forma remota. Si permanecen en la red local, la aplicación no puede comunicarse con ellos una vez desplegada.
 
 Por este motivo, ambos servidores se despliegan en la nube utilizando los servicios de DonWeb, una plataforma de hosting que permite contratar servidores virtuales (VPS) con acceso remoto. Esto garantiza que los servicios de enrutamiento estén disponibles desde cualquier ubicación.
 
