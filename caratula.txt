@@ -9,10 +9,11 @@
 {\Large\textbf{Facultad de Ciencias Económicas y Estadística}}\\[0.2cm]
 {\large Universidad Nacional de Rosario}
 
-\vspace{1.5cm}
+\vspace{1cm}
 
-{\LARGE\textbf{Anteproyecto}}\\[0.7cm]
-{\huge\textbf{[Acá va el título de la tesina]}}
+{\LARGE\textbf{Anteproyecto de Tesina}}\\[0.2cm]
+{\Large\textbf{Licenciatura en Estadística}}\\[1cm]
+{\huge\textbf{"Optimización de rutas en la ciudad de Rosario mediante la teoría de grafos y el algoritmo de Dijkstra"}}
 
 \vspace{2cm}
 
