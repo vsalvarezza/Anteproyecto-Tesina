@@ -154,7 +154,7 @@ Es importante destacar que se decidieron configurar dos servidores locales y no 
 
 Una vez construidos los servidores de OSRM locales, es necesario desplegarlos en la nube. Esto se debe a que, al publicar la aplicación en la web, los servidores deben estar accesibles de forma remota. Si permanecen en la red local, la aplicación no podrá comunicarse con ellos una vez desplegada.
 
-Por este motivo, ambos servidores se despliegan en la nube utilizando los servicios de DonWeb, una plataforma de hosting que permite contratar servidores virtuales (VPS) con acceso remoto. Esto garantiza que los servicios de enrutamiento estén disponibles desde cualquier ubicación.
+Por este motivo, ambos servidores se despliegan en la nube utilizando los servicios de DonWeb (DonWeb, s.f.), una plataforma de hosting que permite contratar servidores virtuales (VPS) con acceso remoto. Esto garantiza que los servicios de enrutamiento estén disponibles desde cualquier ubicación.
 
 Este despliegue es clave para hacer posible la construcción de la aplicación. Al contar con los servidores OSRM en la nube, se vuelve posible conectarlos a la aplicación y habilitar una funcionalidad central: generar recorridos según el criterio seleccionado.
 
