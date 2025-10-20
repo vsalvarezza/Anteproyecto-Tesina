@@ -46,7 +46,7 @@ Sin embargo, surgen algunas preguntas fundamentales: ¿Cómo funcionan realmente
 
 Para resolver este problema, se emplea el algoritmo de Dijkstra, desarrollado por Edsger W. Dijkstra en 1956 y publicado en 1959 (Dijkstra, 1959). Este algoritmo, ampliamente utilizado en teoría de grafos, permite encontrar el camino más corto entre dos nodos cuando los pesos de las aristas son no negativos. Su eficiencia y robustez lo convierten en una herramienta clave en diversas aplicaciones, como sistemas de navegación, redes informáticas y planificación logística. Uno de los servidores que implementa este algoritmo es OSRM (*Open Source Routing Machine*) (Luxen & Vetter, 2011), un enrutador de código abierto diseñado para procesar datos provenientes de OpenStreetMap (OSM) (OpenStreetMap, s.f.). OSRM, al integrarse con OSM, calcula rutas optimizadas en función de distintos criterios, como el medio de transporte o restricciones en el camino. Su capacidad para manejar grandes volúmenes de datos y ofrecer respuestas rápidas lo convierte en una solución ampliamente utilizada en aplicaciones de movilidad, logística y optimización de rutas.
 
-En este trabajo, se desarrolla una aplicación web utilizando la librería Shiny (Chang, 2023)(\textbf{\textcolor{red}{incluir cita a shiny usando la info que sale en citation("shiny")}}) (\textbf{\textcolor{green}{corregido}}) del lenguaje R. Shiny es una herramienta interactiva que permite crear aplicaciones web dinámicas y reactivas directamente desde RStudio. Esta aplicación está diseñada para calcular recorridos óptimos entre diferentes puntos de la ciudad de Rosario, permitiendo al usuario seleccionar intersecciones como puntos de origen y destino. A partir de esta selección, se genera el recorrido más corto o el más rápido, según la preferencia del usuario. Comprender cómo se estructuran y procesan estos datos no solo permite analizar en profundidad el funcionamiento de estas herramientas, sino también explorar aplicaciones en movilidad urbana, planificación del transporte público y optimización logística. Para establecer la conexión entre R y el motor de enrutamiento OSRM se utiliza el paquete osrm (Giraud, 2022), que permite integrar directamente los cálculos de rutas dentro de la aplicación Shiny.
+En este trabajo, se desarrolla una aplicación web utilizando la librería Shiny (Chang, 2023) del lenguaje R. Shiny es una herramienta interactiva que permite crear aplicaciones web dinámicas y reactivas directamente desde RStudio. Esta aplicación está diseñada para calcular recorridos óptimos entre diferentes puntos de la ciudad de Rosario, permitiendo al usuario seleccionar intersecciones como puntos de origen y destino. A partir de esta selección, se genera el recorrido más corto o el más rápido, según la preferencia del usuario. Comprender cómo se estructuran y procesan estos datos no solo permite analizar en profundidad el funcionamiento de estas herramientas, sino también explorar aplicaciones en movilidad urbana, planificación del transporte público y optimización logística. Para establecer la conexión entre R y el motor de enrutamiento OSRM se utiliza el paquete osrm (Giraud, 2022), que permite integrar directamente los cálculos de rutas dentro de la aplicación Shiny.
 
 \newpage
 
@@ -98,7 +98,7 @@ Estos valores se actualizan a medida que se exploran nuevas rutas y pueden clasi
 
 El procedimiento del algoritmo se desarrolla de la siguiente manera:
 
-1.  **Inicialización:** Se establece el costo mínimo desde el nodo de origen hacia sí mismo $D(o) = 0$, y para todos los demás nodos $D(t) = \infty$, ya que no se conoce el costo hacia ellos. \textbf{\textcolor{red}{Donde $t$ pertenece al conjunto $T$ ver si podemos poner esto en la oración anterior, quizas usando notacion matemática}} (\textbf{\textcolor{green}{incluido, ver si te gusta como quedo}}), el cual se define como el conjunto de todos los nodos no visitados, es decir, aquellos nodos cuya distancia mínima desde el origen aún no ha sido confirmada.
+1.  **Inicialización:** Se establece el costo mínimo desde el nodo de origen hacia sí mismo $D(o) = 0$, y para todos los demás nodos $D(t) = \infty$, ya que no se conoce el costo hacia ellos.
 
 2.  **Selección del nodo con menor costo:** Se selecciona el nodo $u$ del conjunto $T$ con el valor más bajo de $D$, es decir, el nodo cuyo costo desde el origen es el mínimo entre los nodos no visitados.
 
@@ -150,11 +150,7 @@ Aunque OSRM ofrece un servidor público para el cálculo de rutas, este servicio
 
 Es importante destacar que se decidieron configurar dos servidores locales y no uno, ya que un único servidor no permite calcular rutas con criterios diferentes, ni de manera simultánea ni en distintas consultas. Esto hizo necesario implementar dos servidores para poder aplicar ambos criterios de forma independiente.
 
-\textbf{\textcolor{red}{esta parte no la pondria en el anteproyecto, solo en la tesina}} \textbf{\textcolor{green}{modificada}}
-
 ### **Despliegue en la nube**
-
-\textbf{\textcolor{red}{si nombras shinyapps hay que definirlo, mejor decir directamente publicar en la web, o publicar online, algo asi}} \textbf{\textcolor{green}{modificado}}
 
 Una vez construidos los servidores de OSRM locales, es necesario desplegarlos en la nube. Esto se debe a que, al publicar la aplicación en la web, los servidores deben estar accesibles de forma remota. Si permanecen en la red local, la aplicación no podrá comunicarse con ellos una vez desplegada.
 

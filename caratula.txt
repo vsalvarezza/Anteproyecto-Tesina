@@ -18,8 +18,8 @@
 \vspace{2cm}
 
 \begin{flushleft}
-\textbf{Director:} Iván Millanes\\
-\textbf{Codirector:} Diego Marfetán Molina\\
+\textbf{Director:} Diego Marfetán Molina\\
+\textbf{Codirector:} Iván Millanes\\
 \textbf{Alumna:} Valentina Salvarezza
 \end{flushleft}
 
